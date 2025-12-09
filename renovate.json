@@ -13,9 +13,14 @@
   "packageRules": [
     {
       "matchDatasources": ["docker"],
-      "matchFileNames": ["one-container/pihole-unbound/Dockerfile"],
-      "updateTypes": ["major", "minor", "patch"],
-      "automerge": true
+      "matchFileNames": ["docker/Dockerfile"],
+      "updateTypes": ["major", "minor", "patch"]
+    },
+    {
+      "matchDepNames": ["pihole/pihole"],
+      "matchDatasources": ["docker"],
+      "separateMultipleMinor": true,
+      "separateMinorPatch": true
     }
   ]
 }
