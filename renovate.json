@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "reviewers": ["mpgirro"],
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "rebaseWhen": "behind-base-branch",
+  "recreateWhen": "always",
+  "fetchChangeLogs": "pr",
+  "additionalBranchPrefix": "{{manager}}/",
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchFileNames": ["docker/Dockerfile"],
+      "updateTypes": ["major", "minor", "patch"]
+    },
+    {
+      "matchDepNames": ["pihole/pihole"],
+      "matchDatasources": ["docker"],
+      "separateMultipleMinor": true,
+      "separateMinorPatch": true
+    }
+  ]
+}

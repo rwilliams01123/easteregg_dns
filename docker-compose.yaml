@@ -53,7 +53,7 @@ services:
       context: ./pihole-unbound
       dockerfile: Dockerfile
     container_name: pihole_dns
-    image: cbcrowe/pihole-unbound:latest
+    image: mpgirro/pihole-unbound:latest
     hostname: ${PIHOLE_HOSTNAME}
     domainname: ${PIHOLE_DOMAIN_NAME}
     #ports:      
@@ -72,15 +72,12 @@ services:
     environment:
       - FTLCONF_LOCAL_IPV4=${PIHOLE_FTLCONF_LOCAL_IPV4}
       - TZ=${PIHOLE_TZ:-UTC}
-      - WEBPASSWORD=${PIHOLE_WEBPASSWORD}
-      - WEBTHEME=default-auto
-      - REV_SERVER=${PIHOLE_REV_SERVER:-false}
-      - REV_SERVER_TARGET=${PIHOLE_REV_SERVER_TARGET}
-      - REV_SERVER_DOMAIN=${PIHOLE_REV_SERVER_DOMAIN}
-      - REV_SERVER_CIDR=${PIHOLE_REV_SERVER_CIDR}
-      - PIHOLE_DNS_=127.0.0.1#5335
-      - DNSSEC=true
-      - DNSMASQ_LISTENING=single
+      - FTLCONF_webserver_api_password=${PIHOLE_WEBPASSWORD}
+      - FTLCONF_webserver_interface_theme=default-auto
+      - FTLCONF_dns_revServers=${PIHOLE_REV_SERVER:-false},${PIHOLE_REV_SERVER_CIDR},${PIHOLE_REV_SERVER_TARGET},${PIHOLE_REV_SERVER_DOMAIN}
+      - FTLCONF_dns_upstreams=127.0.0.1#5335
+      - FTLCONF_dns_dnssec=true
+      - FTLCONF_dns_listeningMode=single
       #- DHCP_ACTIVE=true
       #- DHCP_START=100.64.0.200
       #- DHCP_END=100.64.0.250
@@ -88,10 +85,9 @@ services:
       #- DHCP_LEASETIME=24
       #- PIHOLE_DOMAIN=home
       #- DHCP_rapid_commit=true
-      - TEMPERATUREUNIT=f
+      #- TEMPERATUREUNIT=f
     volumes:
       - etc_pihole-unbound:/etc/pihole:rw
-      - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
     restart: unless-stopped
 
 networks:
