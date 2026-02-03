@@ -86,6 +86,7 @@ services:
       #- TEMPERATUREUNIT=f
     volumes:
       - etc_pihole-unbound:/etc/pihole:rw
+      - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
     restart: unless-stopped
 
 networks:
