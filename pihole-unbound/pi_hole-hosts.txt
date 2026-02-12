@@ -1,0 +1,40 @@
+127.0.0.1 localhost
+
+# The following Lines are desirable for IPv capable hosts
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+100.64.0.2 ruckus.home
+100.64.0.5 ee-pihole.ee-pihole.home ee-pihole
+100.64.0.50 R-MBA-Office
+100.64.0.51 R-MBA-Wifi
+100.64.0.52 R-iPhone
+100.64.0.53 R-Kindle
+100.64.0.54 R-MBA-Eth
+100.64.0.55 C-iPhone
+100.64.0.56 Caitlin-Air
+100.64.0.206 Ruckus_AP-Front
+100.64.0.207 Ruckus_AP-Back
+100.64.0.208 Ruckus_AP-Garage
+100.64.0.209 Ruckus_AP-AP5
+100.64.0.210 Ruckus_AP-АР6
+100.64.0.211 Wyze-Home_Alarm
+100.64.0.212 Wyze-Front_Cam
+100.64.0.213 Wyze-Back_Cam
+100.64.0.214 Wyze-Car_Cam
+100.64.0.215 Wyze-Thermostat
+100.64.0.216 Wyze-TV_Light_Strip
+100.64.0.217 Wyze-Front_AP_Plug
+100.64.0.218 Wyze-Indoor2_Plug
+100.64.0.219 Wyze-Outdoor_Plug
+100.64.0.220 Hue_Bridge
+100.64.0.221	EasterEgg_Printer
+100.64.0.222	Refrigerator
+100.64.0.223	Samsung_TV
+100.64.0.224	Tablo
+100.64.0.225	Polk_Soundbar
+100.64.0.226	Apple_TV
+100.64.0.227	Sonos

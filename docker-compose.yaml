@@ -87,6 +87,7 @@ services:
     volumes:
       - etc_pihole-unbound:/etc/pihole:rw
       - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
+      - ${PWD}/pihole-unbound/pi_hole-hosts.txt:/etc/hosts:rw
     restart: unless-stopped
 
 networks:
