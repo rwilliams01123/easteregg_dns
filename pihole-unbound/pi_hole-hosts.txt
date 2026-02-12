@@ -35,6 +35,5 @@ ff02::2 ip6-allrouters
 100.64.0.222	Refrigerator
 100.64.0.223	Samsung_TV
 100.64.0.224	Tablo
-100.64.0.225	Polk_Soundbar
+100.64.0.225	Sonos
 100.64.0.226	Apple_TV
-100.64.0.227	Sonos
